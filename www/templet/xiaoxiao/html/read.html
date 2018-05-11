@@ -1,0 +1,131 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>[read:title]{if:{new:pagination}>1}{new:conn}第{new:pagination}页{end if}{new:conn}{new:name}</title>
+<meta name="keywords" content="[read:keyword]" />
+<meta name="description" content="[read:desc]" />
+{new:template src=head.html}
+<script>$(function(){$("nav").find("li").eq({new:navid}).addClass("nav-active");});</script>
+</head>
+<body class="nobg">
+{new:template src=top.html}
+<div class="container">
+<section>
+<article>
+<h3 class="arc-title index-title">[read:title]</h3>
+<div class="post-line bg-color">
+<ul>
+<li><a title="[read:user]发表于[read:time type=年月日短时间]"><i class="el-time"></i><time>[read:time type=年月日短时间]</time></a></li>
+<li><a href="[read:userlink]" title="作者：[read:user]"><i class="el-user"></i>[read:user]</a></li>
+<li><a href="#Comment" title="转到评论"><i class="el-comment"></i>[read:commentnum]</a></li>
+<li><a title="已有 [read:i] 次浏览"><i class="el-eye-open"></i>([read:i])</a></li>
+</ul>
+</div>
+<div class="article-content bg-color"id="Hotbg">
+<div class="article-body">
+[read:info]
+</div>
+<div class="article-fx"><a class="fx-btn img-circle" href="javascript:;" class="img-circle">分享</a>
+<div class="bd-fx arc-bdfx">
+<i class="el-remove fx-close"></i>
+<ul class="bdsharebuttonbox">
+<li><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></li>
+<li><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
+<li><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></li>
+<li><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></li>
+</ul>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+</div>
+<hr>
+<div class="article_tag">
+<ul >        
+<li><a href="[read:listlink]" title="归类：{new:navname}">{new:navname}</a></li>
+<li>{if:"[read:tagslink]"<>""}[read:tagslink]{else}</a>暂无标签</a>{end if}</li>
+</ul>
+</div>
+</div>
+</article>
+<div class="shangyip bg-color">
+<span><i class="el-arrow-up"></i>上一篇：[read:prev]</span>
+<span><i class="el-arrow-down"></i>下一篇：[read:next]</span>
+</div>
+<div class="maybe-love">
+<h4 class="index-title"><i class="el-heart"></i>相关推荐</h4>
+<ul>
+{new:content s=[read:keyword] type=img no=[read:id] num=4}
+<li>
+<a href="[content:infolink]">
+<img src="[content:img]"  alt="[content:name]" title="[content:name]" />
+<span>[content:name]</span>
+</a>
+</li>
+{/new:content}
+</ul>
+</div>	
+<h3 class="form-btn blue-text" ><a href="javascript:;"><i class="el-edit"></i>我要留言 / 展开表单</a></h3>
+<div id="Coon" class="form-zd form-in">
+<form action="{new:root}/app/post.asp?type=1&dateid=[read:dateid]&fileid=[read:id]" id="comment-form"  method="post">
+<input name="record" type="hidden" value="0" />
+<div class="input-prepend">
+<span class="add-on"><i class="el-user"></i></span>
+<input type="text" id="name" class="span4" name="name" value="{%Fun_Cookie("postname")%}"  placeholder="昵称（必填）"/>
+</span>
+</div>
+<div class="input-prepend">
+<span class="add-on"><i class="el-envelope"></i></span>
+<input type="text" id="mail" name="mail" class="span4" value="{%Fun_Cookie("postmail")%}" placeholder="邮箱（选填）"/>
+</div>
+<div class="input-prepend">
+<span class="add-on"><i class="el-globe"></i></span>
+<input type="text" id="url" name="url" class="span4" value="{%Fun_Cookie("posturl")%}" placeholder="网站（选填）"/>
+</div>
+<div class="face-box">
+<div id="face-btn"><a href="javascript:void(0);" ><img src="{new:root}/templet{new:temp}/images/face/mr/0.gif" width='25'/></a></div>
+<textarea name="content"  id="txaArticle" placeholder="说点什么吧..."  ></textarea>	
+<div class="face-main" id="face-area" style="display:none;">
+<ul class="face-tab clearfix">
+<li><a href="javascript:void(0);" class="selected-a">默认</a></li>
+<li><a href="javascript:void(0);">阿狸</a></li>	
+<li><a href="javascript:void(0);">贴吧表情</a></li>
+<!--<li><a href="javascript:void(0);">暴走漫画</a></li>-->
+</ul>
+<ul class="face-ul clearfix face_selected"></ul>
+<ul class="face-ul clearfix" style="display:none;"></ul>
+<ul class="face-ul clearfix" style="display:none;"></ul>
+<ul class="face-ul clearfix" style="display:none;"></ul>
+<a href="javascript:void(0);" class="face-close"><i class="el-remove"></i></a>
+</div>
+</div>
+<div class="input-prepend yzm">
+<i class="el-question-sign"></i>
+<input name="check" type="text"  id="prependedInput" size="16"  placeholder="验证码" /> 
+<span><img src="{new:root}/app/checkcode.asp " title="点击刷新验证码?"  onClick="this.src='{new:root}/app/checkcode.asp?t='+(new Date().getTime());" /></span> 
+</div>
+<div class="feed-sub"><input type="submit" class="btn btn-inverse" value="提交留言" onclick="return checkform()" />  </div>	
+</form>
+</div>
+<div class="comment-area" id="Comment">
+<ul>
+{new:comment id=[read:id] class=1}
+<li class="bg-color">
+<div class="comment-ava">
+<a id="Comment-[comment:id]" target="_blank" rel="nofollow"{if:instr("[comment:url]",".")>0} href="[comment:url]" title="去 《[comment:name]》 的网站看看?"{end if}>
+<img class="img-circle" src="[comment:img]" alt="[comment:name]"/></a>
+</div>
+<div class="comment-info ">
+<div class="comment-line ">
+<ul>
+<li><a ><i class="el-user"></i>[comment:name]</a></li>
+<li><a title="发表于[comment:time type=年月日长时间]"><i class="el-time"></i>[comment:time type=博客日期格式]</a></li>
+</ul>
+</div>
+<div class="comment-content">[comment:desc]</div>
+</div>
+</li>
+{/new:comment}
+</ul>
+</div>
+</section>
+{new:template src=right.html}
+{new:template src=foot.html}

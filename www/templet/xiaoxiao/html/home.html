@@ -1,0 +1,166 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>{new:title}</title>
+<meta name="keywords" content="{new:keyword}" />
+<meta name="description" content="{new:desc}" />
+{new:template src=head.html}
+<script type="text/javascript">  
+$(function(){
+			var swiper = new Swiper('.swiper-container', {
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				pagination: '.swiper-pagination',
+				paginationType: 'fraction',
+				centeredSlides: true,
+				autoplay: 5500,//自动播放时间
+				autoHeight: true //自动高度		
+			});
+		//瀑布流
+			$('.su').jaliswall({ item: '.su-li' });
+		});
+</script> 
+</head>
+<body class="nobg">
+{new:template src=top.html}
+<div class="container">
+<section class="mysection">
+<div class="swiper-container">
+<ul class="slides swiper-wrapper">
+{new:content num=3 type=imgtop}
+<li class="swiper-slide img_loading">
+<a href="[content:infolink]" title="[content:name]">
+<img src="[content:img]" alt="[content:name]"/>
+</a>
+<div class="swiper-pagination"></div>
+<span class="silde-title">[content:name]</span>
+</li>
+{/new:content}
+</ul>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+		
+<div class="arclist">
+<h4 class="index-title homeh4"><a href=""><i class="el-certificate"></i>最新文章</a></h4>
+<ul>
+{new:content order=time num={new:size}}
+<li{if:[content:i]>500} id="Hot"{end if}>
+<div class="arcimg img_loading">
+<img src="[content:img]" alt="[content:name]" title="[content:name]" />
+</div>
+<div class="arc-right">
+<h4 class="blue-text"><a href="[content:infolink]" title="[content:name]">[content:name]</a></h4>
+<p>[content:info len=160]</p>
+<ul>
+<li><a title="[content:user] [content:time type=年月日长时间] 发表"><i class="el-time"></i> [content:time type=年月日]</a></li>
+<li><a href="[content:userlink]" title="作者： [content:user]"><i class="el-user"></i>[content:user]</a></li>
+<li><a href="/Article/?48.html#Comment"title="已有 [content:commentnum] 条评论"><i class="el-comment"></i>[content:commentnum]条评论</a></li>
+<li><a title="已有 1883 次浏览"><i class="el-eye-open"></i>[content:i]</a></li>
+<li><a href="/List/?7+1.html" title="查看分类"><i class="el-th-list"></i>[content:navname]</a></li>
+</ul>
+</div>
+</li>
+{/new:content}
+</ul>
+</section>
+<aside class="myaside">
+{new:ad id=1}
+<div class="web-author bg-color animation-div">
+<div class="author-tx">
+<img class="img-circle" src="{new:root}/templet{new:temp}/images/icon/ava.gif"/>
+</div>
+<div class="author-name"><span class="blue-text">{new:user}</span><p>{new:slogan}</p></div>
+<div class="data-info">
+<ul>
+<li><strong>{new:gap}</strong><span>运行时常</span></li>
+<li><strong>{new:visit}万</strong><span>浏览量</span></li>
+<li><strong>{new:infonum}</strong><span>内容数量</span></li>
+</ul>
+</div>
+</div>
+<div class="search animation-div">
+<form action="/" method="get">
+<div class="search-index">
+<input name="s" type="text"  placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'"/>
+<i class="el-search"><input value=" "type="submit"/></i>
+</div>
+</form>
+</div>
+<div class="clos-new bg-color animation-div">
+<h4 class="index-title"><i class="el-bulb"></i>最新更新</h4>
+<ul>
+<li>
+<i class="el-cloud"></i>
+<iframe id="tianqi" scrolling="no" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe>
+</li>
+{new:content order=time num=1}
+<li>
+<span>
+<i class="el-arrow-up"></i>
+最近：<font class="blue-text">[content:user]</font> [content:time type=博客日期格式]</span>
+<a title="[content:user] 最后更新了【[content:name]】" >更新了<b class="lable">内容</b></a>
+</li>
+{/new:content}
+</ul>
+</div>
+<div class="article-push  bg-color animation-div">
+<h4 class="index-title"><i class="el-asl"></i>推荐图文</h4>
+<ul>
+{new:content num=3 type=imgpush}
+<li>
+<div class="arcimg img_loading"> 
+<a href="[content:infolink]"><img src="[content:img]" alt="[content:name]" title="[content:name]"/></a>
+</div>
+<div class="arc-right">
+<h4 class="blue-text"><a href="[content:infolink]">[content:name]</a></h4>
+<p>[content:desc]</p>
+<ul>
+<li><a title="发表于[content:time type=年月日]"><i class="el-time"></i>[content:time type=年月日]</a></li>
+<li><a title="[content:i]次浏览"><i class="el-fire"></i>[content:i]</a></li>
+</ul>
+</div>
+</li>
+{/new:content}
+</ul>
+</div>
+<div class="mytab bg-color animation-div">
+<div class="tab-btn"><a class="hd-btn tab-active"href="javascript:;"><i class="el-comment-alt"></i>互动信息</a><a class="ph-btn"href="javascript:;"><i class="el-signal"></i>文章排行</a></div>
+<ul class="hudong-ul">
+{new:comment order=id num=6 class=1}
+<li>
+<div class="sd-tx">	
+<a href="[comment:url]" target="_blank" rel="nofollow" title="去 [comment:name] 的网站看看 ?"><img src="[comment:img]" alt="[comment:name]" class="img-circle"/></a>
+</div>
+<div class="sd-name">
+<span><i class="el-user"></i>[comment:name]<time >2016-8-7 10:11:43</time></span>
+<a class="blue-text" href="[comment:link]#Comment-[comment:id]" title="[comment:desc]" >[comment:desc len=20]</a>
+</div>
+</li>
+{/new:comment}
+</ul>
+<ul class="paihang-ul">
+{new:content order=i num=6}
+<li><span></span><a href="[content:infolink]" title="[content:name]">[content:name]<b>([content:i])</b></a></li>
+{/new:content}	
+</ul>	
+</div>	
+<div class="cloud bg-color animation-div">
+<h4 class="index-title"><i class="el-tags"></i>标签云</h4>
+<ul id="3dcloud">
+{new:tagslist order=ii num=12}
+<li><a href="[tagslist:link]" title="标签：[tagslist:name]">[tagslist:name]</a></li>
+{/new:tagslist}
+</ul>
+</div>
+<div class="side-link ">
+<h4 class="index-title"><i class="el-paper-clip"></i>友情链接</h4>
+<ul>
+{new:link}
+<li><a href="[link:url]" target="_blank" title="[link:desc]">[link:name]</a></li>
+{/new:link}
+</ul>
+</div>
+</aside>
+</div>
+{new:template src=foot.html}

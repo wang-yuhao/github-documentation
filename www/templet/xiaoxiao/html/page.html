@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<title>[page:title]{if:{new:pagination}>1}{new:conn}ตฺ{new:pagination}าณ{end if}{new:conn}{new:name}</title>
+<meta name="keywords" content="[page:keyword]" />
+<meta name="description" content="[page:desc]" />
+{new:template src=head.html}
+</head>
+<body class="nobg">
+{new:template src=top.html}
+<div class="container">
+<section>
+<article>
+<div class="about-content" style="padding:0;">
+[page:info]
+</div>
+</article>
+</section>
+{new:template src=right.html}
+{new:template src=foot.html}

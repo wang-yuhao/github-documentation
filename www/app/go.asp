@@ -1,0 +1,15 @@
+<!--#include file="../Inc/New_Class.asp"-->
+<%
+Rem /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Rem 程序名称：New Cms
+Rem 程序作者：新成
+Rem 作者博客：http://zhanxincheng.com/
+Rem //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+dim go:go=Fun_GetID("go","get")
+If Fun_Null(go) Then die Fun_404(New_404)
+If Not Fun_URL(go) Then go="http://"&go
+echo Replace(Fun_StrAll(Fun_File(New_Root&New_Tempfile&New_Temp&"/skin/go.html")),"{new:golink}",go)
+exe.OverConn()
+If New_True=0 Then echo overtime
+%>
+                  

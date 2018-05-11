@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>{new:navtitle}{if:{new:pagination}>1}{new:conn}第{new:pagination}页{end if}{new:conn}{new:name}</title>
+<meta name="keywords" content="{new:navkeyword}" />
+<meta name="description" content="{new:navdesc}" />
+{new:template src=head.html}
+</head>
+<body class="nobg">
+{new:template src=top.html}
+<div class="container">
+<section>
+<h4 class="index-title"> 
+<i class="el-th-list"></i>位置：首页{new:navconn}{new:crumbs}
+<span style="float:right;margin-right:10px;">共有内容:<font class="orange-text"> {new:recordcount} </font>篇</span>
+</h4>	
+<div class="arclist">
+<ul>
+{new:search num={new:size}}
+<li>
+<div class="arcimg img_loading">
+<img src="[search:img]"  alt="[search:name]" title="[search:name]" />
+</div>
+<div class="arc-right">
+<h4 class="blue-text"><a href="[search:infolink]" title="[search:name]">[search:name]</a></h4>
+<p>[search:info len=160]</p>
+<ul>
+<li><a title="[search:user] [search:time type=年月日] 发表 "><i class="el-time"></i>[search:time type=年月日]</a></li>
+<li><a href="[search:userlink]" title="作者： [search:user]"><i class="el-user"></i>[search:user]</a></li>
+<li><a href="[search:infolink]#Comment"title="已有 [search:commentnum] 条评论"><i class="el-comment"></i>[search:commentnum]条评论</a></li>
+<li><a title="已有 [search:i] 次浏览"><i class="el-eye-open"></i>[search:i]</a></li>
+<li class="mob-hidden">
+<i class="el-tag"></i>
+<a>[search:tagslink]</a>
+</li>
+<li><a href="[search:listlink]" title="点击查看：[search:navname]"><i class="el-th-list"></i>[search:navname]</a></li>
+</ul>
+</div>
+</li>
+{/new:search}
+</ul>
+</div>
+<div class="pagination">
+<div class="list-page">
+<ul class="post-data">
+<li><a>第 {new:pagination} 页</a> <a>共 {new:pagecount} 页</a></li>
+</ul>
+</div>
+<ul>
+{new:pagenum num=3,3}
+</ul>
+</div>
+</section>
+{new:template src=right.html}
+{new:template src=foot.html}

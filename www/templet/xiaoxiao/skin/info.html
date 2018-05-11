@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>[info:title]</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta name="robots" content="none"/>
+			<!-- CSS
+			================================================== -->
+			<link rel="stylesheet" href="{%New_Root%}{%New_upLoad%}/css/userskin.css" />
+			<link rel="shortcut icon" href="{%New_Root%}{%New_upLoad%}/img/favicon.ico" />
+				<style type="text/css">
+					.style {width:70%;margin-left:auto; margin-right:auto;background: rgba(255, 255, 255, 0.5) none repeat scroll 0px 0px !important;margin-top:17%}
+					.style_new {font-size:20px; text-align:center; padding:10% 0 10% 0;font-family:'微软雅黑'}
+				</style>
+				<!-- Js
+				///////////////////////////////////////////////////-->
+					<script type="text/javascript">
+						{if:"[info:link]"<>""}setTimeout(func,"2500"){end if}
+						function func()
+						{
+						{if:"[info:link]"="back"}
+						history.back();
+						{else}
+						window.location.href='[info:link]?Rnd={%Now()%}'
+						window.location.replace('[info:link]?Rnd={%Now()%}')
+						{end if}
+						}
+					</script> 
+	</head>
+		<body>
+			<div class="style">
+				<div class="style_new">
+				[info:vers]：<a>[info:desc]</a>
+				</div>
+			</div>
+		</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>[page:title]{if:{new:pagination}>1}{new:conn}第{new:pagination}页{end if}{new:conn}{new:name}</title>
+<meta name="keywords" content="[page:keyword]" />
+<meta name="description" content="[page:desc]" />
+{new:template src=head.html}
+</head>
+<body class="nobg">
+{new:template src=top.html}
+<div class="container">
+<section>
+<article>
+<div class="about-content" style="padding:0;">
+<h3 class="form-btn blue-text" ><a href="javascript:;"><i class="el-edit"></i>我要留言 / 展开表单</a></h3>
+<div id="Coon" class="form-zd form-in">
+<form action="{new:root}/app/post.asp?type=0" id="comment-form"  method="post">
+<input name="record" type="hidden" value="0" />
+<div class="input-prepend">
+<span class="add-on"><i class="el-user"></i></span>
+<input type="text" id="name" class="span4" name="name" value="{%Fun_Cookie("postname")%}"  placeholder="昵称（必填）"/>
+</span>
+</div>
+<div class="input-prepend">
+<span class="add-on"><i class="el-envelope"></i></span>
+<input type="text" id="mail" name="mail" class="span4" value="{%Fun_Cookie("postmail")%}" placeholder="邮箱（选填）"/>
+</div>
+<div class="input-prepend">
+<span class="add-on"><i class="el-globe"></i></span>
+<input type="text" id="url" name="url" class="span4" value="{%Fun_Cookie("posturl")%}" placeholder="网站（选填）"/>
+</div>
+<div class="face-box">
+<div id="face-btn"><a href="javascript:void(0);" ><img src="{new:root}/templet{new:temp}/images/face/mr/0.gif" width='25'/></a></div>
+<textarea name="content"  id="txaArticle" placeholder="说点什么吧..."  ></textarea>	
+<div class="face-main" id="face-area" style="display:none;">
+<ul class="face-tab clearfix">
+<li><a href="javascript:void(0);" class="selected-a">默认</a></li>
+<li><a href="javascript:void(0);">阿狸</a></li>	
+<li><a href="javascript:void(0);">贴吧表情</a></li>
+<!--<li><a href="javascript:void(0);">暴走漫画</a></li>-->
+</ul>
+<ul class="face-ul clearfix face_selected"></ul>
+<ul class="face-ul clearfix" style="display:none;"></ul>
+<ul class="face-ul clearfix" style="display:none;"></ul>
+<ul class="face-ul clearfix" style="display:none;"></ul>
+<a href="javascript:void(0);" class="face-close"><i class="el-remove"></i></a>
+</div>
+</div>
+<div class="input-prepend yzm">
+<i class="el-question-sign"></i>
+<input name="check" type="text"  id="prependedInput" size="16"  placeholder="验证码" /> 
+<span><img src="{new:root}/app/checkcode.asp" title="点击刷新验证码?"  onClick="this.src='{new:root}/app/checkcode.asp?t='+(new Date().getTime());" /></span> 
+</div>
+<div class="feed-sub"><input type="submit" class="btn btn-inverse" value="提交留言" onclick="return checkform()" />  </div>	
+</form>
+</div>
+<div class="comment-area" id="Comment">
+<ul>
+{new:comment class=0}
+<li class="bg-color">
+<div class="comment-ava">
+<a id="Comment-[comment:id]" target="_blank" rel="nofollow"{if:instr("[comment:url]",".")>0} href="[comment:url]" title="去 《[comment:name]》 的网站看看?"{end if}>
+<img class="img-circle" src="[comment:img]" alt="[comment:name]"/></a>
+</div>
+<div class="comment-info ">
+<div class="comment-line ">
+<ul>
+<li><a ><i class="el-user"></i>[comment:name]</a></li>
+<li><a title="发表于[comment:time type=年月日长时间]"><i class="el-time"></i>[comment:time type=博客日期格式]</a></li>
+</ul>
+</div>
+<div class="comment-content">[comment:desc]</div>
+</div>
+</li>
+{/new:comment}
+</ul>
+</div>
+</div>
+</article>
+</section>
+{new:template src=right.html}
+{new:template src=foot.html}

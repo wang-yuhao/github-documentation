@@ -1,0 +1,21 @@
+﻿<style>div {font-family: arial,courier new,courier,"微软雅黑",monospace !important;} a.link {text-decoration:none !important;}a {text-decoration:none !important;}</style>
+<div style="position:relative;font-size:14px;height:auto;padding:15px 15px 10px 15px;z-index:1;zoom:1;line-height:1.7;">
+<div style="border:1px double #f60;">
+<div style="background:#f60; padding:10px 10px 10px 20px; color:#FFF; font-size:16px;">
+<a style="text-decoration:none;color:#fff;" href="[new:url]" target="_blank">{new:name}</a> 有了新的[post:type]：
+</div>
+<div style="padding:10px 10px 5px 20px; font-size:12px">亲爱的 [ {new:user} ] 您好！</div>
+<div style="padding:5px 10px 10px 20px; font-size:12px">[post:name] 在 [ 新成博客 ] {if:"[post:type]"="评论"}对文章《<a href="[post:link]">[post:title]</a>》{else}{end if}上发表了[post:type]：</div>
+<div style="padding:10px 10px 10px 10px; font-size:12px; background:#f2f2f2;border:1px double #ccc; margin:0px 15px 0px 15px; line-height:25px;">
+内容：[post:desc]
+</div>
+{if:"[post:mail]"<>""=true}<div style="padding:10px 10px 10px 10px; font-size:12px; background:#f2f2f2;border:1px double #ccc; margin:10px 15px 0px 15px; line-height:25px;">邮箱：[post:mail]</div>{else}{end if}
+{if:"[post:url]"<>""}<div style="padding:10px 10px 10px 10px; font-size:12px; background:#f2f2f2;border:1px double #ccc; margin:10px 15px 0px 15px; line-height:25px;">网址：[post:url]</div>{else}{end if}
+{if:"[post:tel]"<>""}<div style="padding:10px 10px 10px 10px; font-size:12px; background:#f2f2f2;border:1px double #ccc; margin:10px 15px 0px 15px; line-height:25px;">电话：[post:tel]</div>{else}{end if}
+{if:"[post:qq]"<>""}<div style="padding:10px 10px 10px 10px; font-size:12px; background:#f2f2f2;border:1px double #ccc; margin:10px 15px 0px 15px; line-height:25px;">Q Q：[post:qq]</div>{else}{end if}
+<div style="padding:10px 10px 10px 20px; font-size:12px">→ 您可以点击 
+<a style="text-decoration:none;" href="[post:link]" target="_blank">查看完整内容</a>
+</div>
+<div style="padding:10px 10px 10px 20px; font-size:12px"><strong>温馨提示</strong> 本邮件由系统自动发出，无须回复！</div>
+</div>
+</div>

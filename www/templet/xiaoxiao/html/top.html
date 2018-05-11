@@ -1,0 +1,65 @@
+﻿<header class="myheader">
+<div class="top">
+<div class="top-left">
+<div class="logo"><a href="/"><img src="{new:root}/templet{new:temp}/images/logo.png"/></a></div>
+<div class="web-xiaoxi">
+<i class="el-speaker"></i>
+<ul class="mulitline">
+{new:notice}
+</ul>
+</div>
+<div class="mobile-nav"><i class="el-lines"></i><i class="el-remove"></i></div>
+</div>
+<nav class="mynav">
+<ul class="orange-text">
+<li{if:{new:navid}=-1} class="nav-active"{end if}><a href="/">首页</a></li>
+{new:navlist}
+{if:[navlist:down]=true}
+<li class="drop">
+<a href="[navlist:link]" >[navlist:name]<i class='el-chevron-down'></i></a>
+{else}
+<li>
+<a href="[navlist:link]" >[navlist:name]</a>
+{end if}
+<div class="drop-nav orange-text ">
+<ul>
+{new:2navlist type=[navlist:id]}	
+<li><a href="[2navlist:link]">[2navlist:name]</a></li>
+{/new:2navlist}
+</ul>
+</div>                 
+</li>
+{/new:navlist}
+</ul>
+<div class="move-bg"></div>
+</nav>
+<div class="mob-menu">
+<div class="search ">
+<form action="/" method="get">
+<div class="search-index">
+<input name="s" type="text"  placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'"/>
+<i class="el-search"><input value=" "type="submit"/></i>
+</div>
+</form>
+</div>
+<ul class="mob-ulnav">
+<li><a href="/">首页</a></li>
+{new:navlist}
+{if:[navlist:down]}
+<li class='mob-drop'>
+<a href="[navlist:link]" >[navlist:name]</a><li></li>
+{else}
+<li>
+<a href="[navlist:link]" >[navlist:name]</a>
+{end if}
+<ul class="mob-dropmenu">
+{new:2navlist type=[navlist:id]}	
+<li><a href="[2navlist:link]">-----[2navlist:name]</a></li>
+{/new:2navlist}
+</ul>
+</li>
+{/new:navlist}	
+</ul>
+</div>
+</div>
+</header>

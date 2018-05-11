@@ -1,0 +1,129 @@
+﻿
+<!--=========右侧开始==========-->
+<aside class="myaside">
+<!--关注我-->
+<div class="focus-me bg-color animation-div">
+	<h4 class="index-title"><i class="el-heart"></i>关注我<small>Focus Me</small></h4>
+	
+		<div class="xiangguan">
+			
+				<div><a class="benbo" href="https://item.taobao.com/item.htm?id=535477522246" target="_blank"><i class="el-download-alt"></i></a><span>源码下载</span></div>
+				<div><a class="taobao" href="https://shop111817581.taobao.com/index.htm?spm=2013.1.w5002-7802590184.2.yRQMF0"  target="_blank"><i class="el-shopping-cart"></i></a><span>淘宝店铺</span></div>
+				<div><a class="side-fx"><i class="el-share-alt"></i></a><span>分享本博</span></div>
+				<div><a class="mail-btn" href="javascript:;"><i class="el-envelope"></i></a><span>订阅我</span></div>
+			
+		</div>
+		
+		<div class="mail-dy">
+			<form  action="http://list.qq.com/cgi-bin/qf_compose_send" method="post" target="_blank">
+				<input type="hidden" name="t" value="qf_booked_feedback"/>
+				<input type="hidden" name="id" value="b2b151b4bc010575c083e18e227ae907aac82bc47e84d3e0"/>
+				<span>订阅</span>
+				<input name="to" type="text"  placeholder="输入邮箱点击订阅吧" onfocus="this.placeholder=''" onblur="this.placeholder='输入邮箱点击订阅吧'"/>
+				<i class="el-envelope"><input value=" "type="submit"/></i>
+			</form>
+			<i class="el-remove fx-close"></i>
+		</div>
+			
+		<div class="bd-fx side-bdfx ">
+			<i class="el-remove fx-close"></i>
+			<ul class="bdsharebuttonbox">
+				<li><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></li>
+				<li><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
+				<li><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></li>
+				<li><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></li>
+			</ul>
+			<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		</div>
+</div>
+<div class="web-author bg-color animation-div">
+<div class="author-tx">
+<img class="img-circle" src="{new:root}/templet{new:temp}/images/icon/ava.gif"/>
+</div>
+<div class="author-name"><span class="blue-text">{new:user}</span><p>{new:slogan}</p></div>
+<div class="data-info">
+			<ul>
+				<li><strong>{new:gap}</strong><span>运行时常</span></li>
+				<li><strong>{new:visit}</strong><span>浏览量</span></li>
+				<li><strong>{new:infonum}</strong><span>内容数量</span></li>
+			</ul>
+		</div>
+</div>
+
+<div class="search animation-div">
+<form action="/" method="get">
+<div class="search-index">
+<input name="s" type="text"  placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'"/>
+<i class="el-search"><input value=" "type="submit"/></i>
+</div>
+</form>
+</div>
+<div class="clos-new bg-color animation-div">
+<h4 class="index-title"><i class="el-bulb"></i>最新更新</h4>
+<ul>
+<li>
+<i class="el-cloud"></i>
+<iframe id="tianqi" scrolling="no" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe>
+</li>
+{new:content order=time num=1}
+<li>
+<span>
+<i class="el-arrow-up"></i>
+最近：<font class="blue-text">[content:user]</font> [content:time type=博客日期格式]</span>
+<a title="[content:user] 最后更新了【[content:name]】" >更新了<b class="lable">内容</b></a>
+</li>
+{/new:content}
+</ul>
+</div>
+<div class="article-push  bg-color animation-div">
+<h4 class="index-title"><i class="el-asl"></i>推荐图文</h4>
+<ul>
+{new:content num=3 type=imgpush}
+<li>
+<div class="arcimg img_loading"> 
+<a href="[content:infolink]"><img src="[content:img]" alt="[content:name]" title="[content:name]"/></a>
+</div>
+<div class="arc-right">
+<h4 class="blue-text"><a href="[content:infolink]">[content:name]</a></h4>
+<p>[content:desc]</p>
+<ul>
+<li><a title="发表于[content:time type=年月日]"><i class="el-time"></i>[content:time type=年月日]</a></li>
+<li><a title="[content:i]次浏览"><i class="el-fire"></i>[content:i]</a></li>
+</ul>
+</div>
+</li>
+{/new:content}
+</ul>
+</div>
+<div class="mytab bg-color animation-div">
+<div class="tab-btn"><a class="hd-btn tab-active"><i class="el-comment-alt"></i>互动信息</a><a class="ph-btn"><i class="el-signal"></i>文章排行</a></div>
+<ul class="hudong-ul">
+{new:comment num=6 class=1}
+<li>
+<div class="sd-tx">	
+<a href="[comment:url]" target="_blank" rel="nofollow" title="去 [comment:name] 的网站看看 ?"><img src="[comment:img]" alt="[comment:name]" class="img-circle"/></a>
+</div>
+<div class="sd-name">
+<span><i class="el-user"></i>[comment:name]<time >[comment:time type=博客日期格式]</time></span>
+<a class="blue-text" href="Shuos/?14.html#Comment-10" title="[comment:desc]" >[comment:desc len=20]</a>
+</div>
+</li>
+{/new:comment}
+</ul>
+<ul class="paihang-ul">
+{new:content order=i num=6}
+<li><span></span><a href="[content:infolink]" title="[content:name]">[content:name]<b>([content:i])</b></a></li>
+{/new:content}	
+</ul>	
+</div>	
+<div class="cloud bg-color animation-div">
+<h4 class="index-title"><i class="el-tags"></i>标签云</h4>
+<ul id="3dcloud">
+{new:tagslist order=ii num=12}
+<li><a href="[tagslist:link]" title="标签：[tagslist:name]">[tagslist:name]</a></li>
+{/new:tagslist}
+</ul>
+</div>
+<div class="side-link"></div>
+</aside>
+</div>

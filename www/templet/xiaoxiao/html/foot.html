@@ -1,0 +1,72 @@
+﻿<footer>
+<div class="footer-area">
+<div class="about-blog">
+<h4>年度排行</h4>
+<div class="ft-part1">
+<ul class="paihang-ul" style="display:block;width:100%;">
+{new:content date=year}
+<li><span></span><a href="[content:infolink]" title="[content:name]"> [content:name]<b>([content:i])</b></a></li>
+{/new:content}
+</ul>
+</div>
+</div>
+<div class="close-fd mob-hidden">
+<h4>留言频道</h4>
+<ul>
+{new:comment class=0 num=3}
+<li>
+<div class="sd-tx">
+<a{if:"[comment:url]"<>""} href="[comment:url]" target="_blank" rel="nofollow" title="去 [comment:name] 的网站看看 ?"{end if}>
+<img src="[comment:img]" alt="[comment:name]" class="img-circle"/>
+</a>
+</div>
+<div class="sd-name">
+<span>[comment:name]</span>
+<a class="blue-text" href="#Comment-[comment:id]" title="[comment:desc]" >[comment:desc len=12]</a>
+</div>
+</li>
+{/new:comment}
+</ul>
+</div>
+<div class="tuwen-pd mob-hidden">
+<h4>图文频道</h4>
+<ul>
+{new:content num=12 type=img order=random}
+<li>
+<a href="[content:infolink]" title="[content:name]">
+<img src="[content:img]" alt="[content:name]" title="[content:name]" class="img-circle"/>
+</a>
+</li>
+{/new:content}
+</ul>
+</div>
+<div class="about-blog">
+<h4>月度排行</h4>
+<div class="ft-part1">
+<ul class="paihang-ul" style="display:block;width:100%;">
+{new:content date=yearmonth}
+<li><span></span><a href="[content:infolink]" title="[content:name]"> [content:name]<b>([content:i])</b></a></li>
+{/new:content}
+</ul>
+</div>
+</div>
+</div>
+<div class="foot-nav">
+<div class="copy-right"><span >CopyRight &#169; {%YEAR(DATE)%} {new:name} by {%Fun_Dname%}</span></div>
+<div class="bottom-nav">
+<span><a href="/?sitemap" target="_blank">XML地图</a>{if:"{new:icp}"<>""} - {new:icp}{end if} - 采用New Cms强力驱动 - 页面执行：{new:overtime}毫秒</span>
+</div>
+</div>
+<div  id="toTop">Back to Top</div>
+<script>   
+window.onload=function(){
+	$(".img_loading").removeClass("img_loading");
+	$(".silde-title").show();
+} 
+document.body.innerHTML = document.body.innerHTML.replace(/\[Q([0-9]*)\]/g, "<img src='{new:root}/templet{new:temp}/images/face/mr/$1.gif'/>");
+document.body.innerHTML = document.body.innerHTML.replace(/\[yc_([0-9]*)\]/g,"<img src='{new:root}/templet{new:temp}/images/face/yc/$1.gif'/>");
+document.body.innerHTML = document.body.innerHTML.replace(/\[ali_([0-9]*)\]/g,"<img src='{new:root}/templet{new:temp}/images/face/ali/$1.gif'/>");
+</script>
+</footer>
+</body>
+</html>

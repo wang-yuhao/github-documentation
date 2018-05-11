@@ -1,0 +1,13 @@
+body{
+	background: #ADD8E6  url(../img/page-bg-1.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+a{ color:#4169E1; }
+a:hover{color:#4169E1; }
+.navbar .nav > .active > a{background-color: #00BFFF;}
+#tc_calendar  #current{background-color:#00BFFF  !important;color:#fff;}
+#tc_week td{background-color:#00BFFF  !important;color:#fff;}
+.footer-col a  { color:##dcdcdc; }
+.footer-col a:hover{ color:#888; }
+.dropdown-menu a { color:#666; }
